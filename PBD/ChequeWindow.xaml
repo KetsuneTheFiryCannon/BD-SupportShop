@@ -1,0 +1,63 @@
+﻿<Window x:Class="PBD.ChequeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBD"
+        mc:Ignorable="d"
+        Title="ChequeWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Column="1" x:Name="ChequeList" SelectionMode="Single" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                            Binding="{Binding Price}" 
+                            Header="Цена" 
+                            Width="199"
+                            />
+                <DataGridTextColumn 
+                            Binding="{Binding Number}" 
+                            Header="Номер тех. поддержки" 
+                            Width="199"
+                            />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Grid Grid.Column="0" Background="Azure">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Номер" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0" FontSize="24" />
+            <ComboBox x:Name="Numbercb" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <TextBlock Text="Цена" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" FontSize="24" />
+            <TextBox x:Name="Price" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
+
+            <Button x:Name="ChequeAdd" Grid.Column="0" Grid.Row="6" Click="ChequeAdd_Click" Content="Создать" Background="AliceBlue"/>
+            <Button x:Name="ChequeUpd" Grid.Column="1" Grid.Row="6" Click="ChequeUpd_Click" Content="Изменить" Background="AliceBlue"/>
+            <Button x:Name="ChequeDel" Grid.Column="2" Grid.Row="6" Click="ChequeDel_Click" Content="Удалить" Background="AliceBlue"/>
+            <Button x:Name="ChequeNext" Grid.Column="3" Grid.Row="6" Click="ChequeNext_Click" Content="Далее" Background="AliceBlue"/>
+            <Button x:Name="ChequeFind" Grid.Column="4" Grid.Row="6" Click="ChequeFind_Click" Content="Найти" Background="AliceBlue"/>
+            <Button x:Name="ChequeBack" Grid.Column="5" Grid.Row="6" Click="ChequeBack_Click" Content="Назад" Background="AliceBlue"/>
+        </Grid>
+    </Grid>
+</Window>

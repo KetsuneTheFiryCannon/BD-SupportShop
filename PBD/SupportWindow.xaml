@@ -1,0 +1,70 @@
+﻿<Window x:Class="PBD.SupportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBD"
+        mc:Ignorable="d"
+        Title="SupportWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Column="1" x:Name="SupportList" SelectionMode="Single" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                            Binding="{Binding Expr2}" 
+                            Header="ФИО сотрудника" 
+                            Width="130"
+                            />
+                <DataGridTextColumn 
+                            Binding="{Binding Expr3}" 
+                            Header="ФИО клиента" 
+                            Width="130"
+                            />
+                <DataGridTextColumn 
+                            Binding="{Binding Number}" 
+                            Header="Номер тех. поддержки" 
+                            Width="139"
+                            />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Grid Grid.Column="0" Background="Azure">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Сотрудник" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="24" />
+            <ComboBox x:Name="EmployeeCB" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <TextBlock Text="Клиент" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0" FontSize="24" />
+            <ComboBox x:Name="ClientCB" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <TextBlock Text="Номер" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" FontSize="24" />
+            <TextBox x:Name="Number" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
+            
+            <Button x:Name="SupportAdd" Grid.Column="0" Grid.Row="6" Click="SupportAdd_Click" Content="Создать" Background="AliceBlue"/>
+            <Button x:Name="SupportUpd" Grid.Column="1" Grid.Row="6" Click="SupportUpd_Click" Content="Изменить" Background="AliceBlue"/>
+            <Button x:Name="SupportDel" Grid.Column="2" Grid.Row="6" Click="SupportDel_Click" Content="Удалить" Background="AliceBlue"/>
+            <Button x:Name="SupportNext" Grid.Column="3" Grid.Row="6" Click="SupportNext_Click" Content="Далее" Background="AliceBlue"/>
+            <Button x:Name="SupportFind" Grid.Column="4" Grid.Row="6" Click="SupportFind_Click" Content="Найти" Background="AliceBlue"/>
+            <Button x:Name="SupportBack" Grid.Column="5" Grid.Row="6" Click="SupportBack_Click" Content="Назад" Background="AliceBlue"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,68 @@
+﻿<Window x:Class="PBD.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBD"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Column="1" x:Name="ClientList" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                            Binding="{Binding Firstname}" 
+                            Header="Фамилия" 
+                            Width="133"
+                            />
+                <DataGridTextColumn 
+                            Binding="{Binding Secondname}" 
+                            Header="Имя" 
+                            Width="133"
+                            />
+                <DataGridTextColumn 
+                            Binding="{Binding Thirdname}" 
+                            Header="Отчество" 
+                            Width="133"
+                            />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Column="0" Background="Azure">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" FontSize="36" />
+            <TextBox x:Name="Firstname" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <TextBlock Text="Имя" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" FontSize="36" />
+            <TextBox x:Name="Secondname" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3"/>
+            <TextBlock Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="4" FontSize="36" />
+            <TextBox x:Name="Thirdname" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5"/>
+            <Button x:Name="ClientAdd" Grid.Column="0" Grid.Row="6" Click="ClientAdd_Click" Content="Создать" Background="AliceBlue"/>
+            <Button x:Name="ClientUpd" Grid.Column="1" Grid.Row="6" Click="ClientUpd_Click" Content="Изменить" Background="AliceBlue"/>
+            <Button x:Name="ClientDel" Grid.Column="2" Grid.Row="6" Click="ClientDel_Click" Content="Удалить" Background="AliceBlue"/>
+            <Button x:Name="ClientNext" Grid.Column="3" Grid.Row="6" Click="ClientNext_Click" Content="Далее" Background="AliceBlue"/>
+            <Button x:Name="ClientFind" Grid.Column="4" Grid.Row="6" Click="ClientFind_Click" Content="Найти" Background="AliceBlue"/>
+            <Button x:Name="ClientBack" Grid.Column="4" Grid.Row="5" Click="ClientBack_Click" Content="Назад" Background="AliceBlue"/>
+        </Grid>
+    </Grid>
+</Window>
